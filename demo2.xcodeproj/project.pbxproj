@@ -6,6 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		E13F48A92DD92EDB00B19C17 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E13F48A82DD92EDB00B19C17 /* FirebaseAuth */; };
+		E13F48AB2DD92EF400B19C17 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = E13F48AA2DD92EF400B19C17 /* FirebaseAnalytics */; };
+		E17D3ABC2DD9271D00A6C7A2 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = E17D3ABB2DD9271D00A6C7A2 /* GoogleSignIn */; };
+		E1A218B92DD75444002E4DD6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E1A218B82DD75444002E4DD6 /* SnapKit */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		E1A2188F2DD75348002E4DD6 /* demo2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demo2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +43,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1A218B92DD75444002E4DD6 /* SnapKit in Frameworks */,
+				E13F48A92DD92EDB00B19C17 /* FirebaseAuth in Frameworks */,
+				E13F48AB2DD92EF400B19C17 /* FirebaseAnalytics in Frameworks */,
+				E17D3ABC2DD9271D00A6C7A2 /* GoogleSignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +89,10 @@
 			);
 			name = demo2;
 			packageProductDependencies = (
+				E1A218B82DD75444002E4DD6 /* SnapKit */,
+				E17D3ABB2DD9271D00A6C7A2 /* GoogleSignIn */,
+				E13F48A82DD92EDB00B19C17 /* FirebaseAuth */,
+				E13F48AA2DD92EF400B19C17 /* FirebaseAnalytics */,
 			);
 			productName = demo2;
 			productReference = E1A2188F2DD75348002E4DD6 /* demo2.app */;
@@ -107,6 +122,11 @@
 			);
 			mainGroup = E1A218862DD75348002E4DD6;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				E1A218B72DD75444002E4DD6 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				E17D3ABA2DD9271D00A6C7A2 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				E13F48A72DD92EDB00B19C17 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = E1A218902DD75348002E4DD6 /* Products */;
 			projectDirPath = "";
@@ -335,6 +355,56 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E13F48A72DD92EDB00B19C17 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.12.0;
+			};
+		};
+		E17D3ABA2DD9271D00A6C7A2 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+		E1A218B72DD75444002E4DD6 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E13F48A82DD92EDB00B19C17 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E13F48A72DD92EDB00B19C17 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		E13F48AA2DD92EF400B19C17 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E13F48A72DD92EDB00B19C17 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		E17D3ABB2DD9271D00A6C7A2 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E17D3ABA2DD9271D00A6C7A2 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		E1A218B82DD75444002E4DD6 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E1A218B72DD75444002E4DD6 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E1A218872DD75348002E4DD6 /* Project object */;
 }
