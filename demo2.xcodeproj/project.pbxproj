@@ -36,6 +36,7 @@
 		E13F48A92DD92EDB00B19C17 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E13F48A82DD92EDB00B19C17 /* FirebaseAuth */; };
 		E13F48AB2DD92EF400B19C17 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = E13F48AA2DD92EF400B19C17 /* FirebaseAnalytics */; };
 		E17D3ABC2DD9271D00A6C7A2 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = E17D3ABB2DD9271D00A6C7A2 /* GoogleSignIn */; };
+		E18AF67E2DDC364F0072657A /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18AF67D2DDC364F0072657A /* EditViewController.swift */; };
 		E1A218B92DD75444002E4DD6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E1A218B82DD75444002E4DD6 /* SnapKit */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,7 @@
 		E11C3F702DDBCE94005938AB /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		E11C3F722DDBCE9F005938AB /* UserDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewModel.swift; sourceTree = "<group>"; };
 		E11C3F7E2DDC2FB9005938AB /* NavigateToRootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigateToRootVC.swift; sourceTree = "<group>"; };
+		E18AF67D2DDC364F0072657A /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		E1A2188F2DD75348002E4DD6 /* demo2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demo2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -208,6 +210,7 @@
 		E11C3F1A2DDB4E7E005938AB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E18AF67C2DDC36340072657A /* EditViewController */,
 				E11C3F262DDB5276005938AB /* TableViewCell */,
 				E11C3F242DDB520F005938AB /* ApiListViewController.swift */,
 			);
@@ -335,6 +338,14 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		E18AF67C2DDC36340072657A /* EditViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E18AF67D2DDC364F0072657A /* EditViewController.swift */,
+			);
+			path = EditViewController;
+			sourceTree = "<group>";
+		};
 		E1A218862DD75348002E4DD6 = {
 			isa = PBXGroup;
 			children = (
@@ -439,6 +450,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E18AF67E2DDC364F0072657A /* EditViewController.swift in Sources */,
 				E11C3EEF2DDB474B005938AB /* CoreDataManager.swift in Sources */,
 				E11C3EF02DDB474B005938AB /* Model.xcdatamodeld in Sources */,
 				E11C3F212DDB4EA3005938AB /* ApiListViewModel.swift in Sources */,

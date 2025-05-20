@@ -231,6 +231,18 @@ extension ApiListViewController: UITableViewDelegate, UITableViewDataSource {
         if let model = viewModel.apiData?[indexPath.row] {
             cell.configure(with: model.name, data: model.data)
         }
+        
+        cell.onEditTapped = { [weak self] in
+            guard let welf = self else { return }
+            
+            guard let data = welf.viewModel.apiData?[indexPath.row] else { return }
+            
+            let editVC = EditViewController(indexPath.row)
+            editVC.model = data
+            editVC.delegate = self
+            welf.present(editVC, animated: true)
+        }
+        
         cell.selectionStyle = .none
         return cell
     }
@@ -239,5 +251,12 @@ extension ApiListViewController: UITableViewDelegate, UITableViewDataSource {
         if editingStyle == .delete {
             self.viewModel.deleteCell(index: indexPath.row)
         }
+    }
+}
+
+extension ApiListViewController: EditViewControllerProtocol {
+    func detailsIsEdited(_ row: Int, _ editedModel: ApiModel) {
+        viewModel.apiData?[row] = editedModel
+        viewModel.editData(editedModel)
     }
 }

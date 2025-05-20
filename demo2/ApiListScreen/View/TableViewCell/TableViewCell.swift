@@ -30,7 +30,7 @@ class TableViewCell: UITableViewCell {
     
     private let editButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setImage(UIImage(named: "square.and.pencil"), for: .normal)
+        button.setImage(UIImage(systemName: "square.and.pencil"), for: .normal)
         button.tintColor = UIColor.black
         button.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .medium)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -62,20 +62,23 @@ class TableViewCell: UITableViewCell {
         contentView.addSubview(editButton)
         stackView.addArrangedSubview(titleLabel)
         stackView.addArrangedSubview(detailsLabel)
-        
-        
+        editButton.addTarget(self, action: #selector(editButtonTapped), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
+            editButton.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            editButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            editButton.widthAnchor.constraint(equalToConstant: 20),
+            
+            
             stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
             stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -12),
             stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            
-            editButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
-            editButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            stackView.trailingAnchor.constraint(equalTo: editButton.leadingAnchor, constant: -16),
         ])
     }
-    
+}
+
+extension TableViewCell {
     // Configure cell with title and data dictionary
     func configure(with name: String, data: DataClass?) {
         titleLabel.text = name
@@ -106,5 +109,11 @@ class TableViewCell: UITableViewCell {
         
         let detailText = details.map { "\($0.key): \($0.value)" }.joined(separator: "\n")
         detailsLabel.text = detailText
+    }
+}
+
+extension TableViewCell {
+    @objc private func editButtonTapped() {
+        self.onEditTapped?()
     }
 }

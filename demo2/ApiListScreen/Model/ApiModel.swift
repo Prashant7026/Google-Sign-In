@@ -8,20 +8,21 @@
 import Foundation
 
 struct ApiModel: Codable {
-    let id, name: String
-    let data: DataClass?
+    let id: String
+    var name: String
+    var data: DataClass?
 }
 
 struct DataClass: Codable {
-    let dataColor, dataCapacity: String?
-    let capacityGB: Int?
-    let dataPrice: Double?
-    let dataGeneration: String?
-    let year: Int?
-    let cpuModel, hardDiskSize, strapColour, caseSize: String?
-    let color, description, capacity: String?
-    let screenSize: Double?
-    let generation, price: String?
+    var dataColor, dataCapacity: String?
+    var capacityGB: Int?
+    var dataPrice: Double?
+    var dataGeneration: String?
+    var year: Int?
+    var cpuModel, hardDiskSize, strapColour, caseSize: String?
+    var color, description, capacity: String?
+    var screenSize: Double?
+    var generation, price: String?
 
     enum CodingKeys: String, CodingKey {
         case dataColor = "color"

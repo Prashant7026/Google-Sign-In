@@ -28,6 +28,12 @@ class ApiListViewModel: ObservableObject {
         isLoading = false
     }
     
+    func editData(_ editedData: ApiModel) {
+        DispatchQueue.global(qos: .userInitiated).async {
+            CoreDataManager.shared.editData(with: editedData)
+        }
+    }
+    
     func deleteCell(index: Int) {
         let deletedModel = self.apiData?[index]
         self.apiData?.remove(at: index)

@@ -121,6 +121,49 @@ extension CoreDataManager {
             print("Failed to save context after deletion: \(error)")
         }
     }
+    
+    func editData(with updatedModel: ApiModel) {
+        let fetchRequest: NSFetchRequest<ApiEntity> = ApiEntity.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id == %@", updatedModel.id)
+
+        do {
+            if let existingEntity = try context.fetch(fetchRequest).first {
+                existingEntity.name = updatedModel.name
+
+                if let updatedData = updatedModel.data {
+                    var dataEntity: DataClassEntity
+                    if let existingDataEntity = existingEntity.data {
+                        dataEntity = existingDataEntity
+                    } else {
+                        dataEntity = DataClassEntity(context: context)
+                        existingEntity.data = dataEntity
+                    }
+
+                    dataEntity.dataColor = updatedData.dataColor
+                    dataEntity.dataCapacity = updatedData.dataCapacity
+                    dataEntity.capacityGB = Int16(updatedData.capacityGB ?? 0)
+                    dataEntity.dataPrice = updatedData.dataPrice ?? 0
+                    dataEntity.dataGeneration = updatedData.dataGeneration
+                    dataEntity.year = Int16(updatedData.year ?? 0)
+                    dataEntity.cpuModel = updatedData.cpuModel
+                    dataEntity.hardDiskSize = updatedData.hardDiskSize
+                    dataEntity.strapColour = updatedData.strapColour
+                    dataEntity.caseSize = updatedData.caseSize
+                    dataEntity.color = updatedData.color
+                    dataEntity.desc = updatedData.description
+                    dataEntity.capacity = updatedData.capacity
+                    dataEntity.screenSize = updatedData.screenSize ?? 0
+                    dataEntity.generation = updatedData.generation
+                    dataEntity.price = updatedData.price
+                }
+
+                try context.save()
+            }
+        } catch {
+            print("Failed to edit data: \(error)")
+        }
+    }
+
 }
 
 extension CoreDataManager {
