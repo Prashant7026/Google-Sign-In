@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="23605" systemVersion="23G93" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="ApiContainerEntity" representedClassName="ApiContainerEntity" syncable="YES" codeGenerationType="class">
+        <relationship name="apiEntities" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="ApiEntity" inverseName="container" inverseEntity="ApiEntity"/>
+    </entity>
+    <entity name="ApiEntity" representedClassName="ApiEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="container" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ApiContainerEntity" inverseName="apiEntities" inverseEntity="ApiContainerEntity"/>
+        <relationship name="data" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DataClassEntity" inverseName="apiEntity" inverseEntity="DataClassEntity"/>
+    </entity>
+    <entity name="DataClassEntity" representedClassName="DataClassEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="capacity" optional="YES" attributeType="String"/>
+        <attribute name="capacityGB" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="caseSize" optional="YES" attributeType="String"/>
+        <attribute name="color" optional="YES" attributeType="String"/>
+        <attribute name="cpuModel" optional="YES" attributeType="String"/>
+        <attribute name="dataCapacity" optional="YES" attributeType="String"/>
+        <attribute name="dataColor" optional="YES" attributeType="String"/>
+        <attribute name="dataGeneration" optional="YES" attributeType="String"/>
+        <attribute name="dataPrice" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String"/>
+        <attribute name="generation" optional="YES" attributeType="String"/>
+        <attribute name="hardDiskSize" optional="YES" attributeType="String"/>
+        <attribute name="price" optional="YES" attributeType="String"/>
+        <attribute name="screenSize" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="strapColour" optional="YES" attributeType="String"/>
+        <attribute name="year" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="apiEntity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ApiEntity" inverseName="data" inverseEntity="ApiEntity"/>
+    </entity>
+    <entity name="UserDetailEntity" representedClassName="UserDetailEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+    </entity>
+</model>

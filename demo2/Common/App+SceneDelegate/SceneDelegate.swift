@@ -21,7 +21,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let sceneWindow = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: sceneWindow)
         
-        let rootVC = ViewController()
+        let rootVC: UIViewController
+        if AppUserDefaults.isLoggedIn {
+            rootVC = MainViewController()
+        } else {
+            rootVC = GoogleSignInViewController()
+        }
+        
         let navigationController = UINavigationController(rootViewController: rootVC)
         
         window?.rootViewController = navigationController
