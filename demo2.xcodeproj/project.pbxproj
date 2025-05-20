@@ -236,12 +236,11 @@
 		E11C3F552DDB70FC005938AB /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				E18AF6822DDC42170072657A /* Constants */,
+				E18AF6812DDC41F10072657A /* CommonUserDefault */,
+				E18AF6802DDC41DE0072657A /* CommonUIKit */,
 				E11C3F812DDC30E2005938AB /* Networking */,
 				E11C3F802DDC30D2005938AB /* App+SceneDelegate */,
-				E11C3F512DDB70FC005938AB /* BaseViewController.swift */,
-				E11C3F542DDB70FC005938AB /* StringConstants.swift */,
-				E11C3F5B2DDB7107005938AB /* AppUserDefaults.swift */,
-				E11C3F7E2DDC2FB9005938AB /* NavigateToRootVC.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -344,6 +343,31 @@
 				E18AF67D2DDC364F0072657A /* EditViewController.swift */,
 			);
 			path = EditViewController;
+			sourceTree = "<group>";
+		};
+		E18AF6802DDC41DE0072657A /* CommonUIKit */ = {
+			isa = PBXGroup;
+			children = (
+				E11C3F7E2DDC2FB9005938AB /* NavigateToRootVC.swift */,
+				E11C3F512DDB70FC005938AB /* BaseViewController.swift */,
+			);
+			path = CommonUIKit;
+			sourceTree = "<group>";
+		};
+		E18AF6812DDC41F10072657A /* CommonUserDefault */ = {
+			isa = PBXGroup;
+			children = (
+				E11C3F5B2DDB7107005938AB /* AppUserDefaults.swift */,
+			);
+			path = CommonUserDefault;
+			sourceTree = "<group>";
+		};
+		E18AF6822DDC42170072657A /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				E11C3F542DDB70FC005938AB /* StringConstants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		E1A218862DD75348002E4DD6 = {
